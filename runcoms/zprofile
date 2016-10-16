@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -41,8 +41,16 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
+# Always execute ~/.profile if it exists
+# This should happen before we modify any path vars in .zprofile
+if [ -e "$HOME/.profile" ]; then
+    . "$HOME/.profile"
+fi
+
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $HOME/casey-env/bin
+  $HOME/env/bin
   /usr/local/{bin,sbin}
   $path
 )
@@ -72,3 +80,4 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
