@@ -49,6 +49,7 @@ fi
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $HOME/casey-k/env/bin
   $HOME/casey-env/bin
   $HOME/env/bin
   /usr/local/{bin,sbin}
