@@ -47,6 +47,16 @@ if [ -e "$HOME/.profile" ]; then
     . "$HOME/.profile"
 fi
 
+# Add python local path to the PATH
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/casey-k/env/bin
@@ -55,10 +65,6 @@ path=(
   /usr/local/{bin,sbin}
   $path
 )
-
-#
-# Less
-#
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
