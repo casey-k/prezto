@@ -79,6 +79,7 @@ else
   # BSD Core Utilities
   if zstyle -t ':prezto:module:utility:ls' color; then
     # Define colors for BSD ls.
+    # https://softwaregravy.wordpress.com/2010/10/16/ls-colors-for-mac/
     export LSCOLORS='ExGxBxDxCxegedabagacad'
 
     # Define colors for the completion system.
