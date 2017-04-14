@@ -62,6 +62,7 @@ path=(
   $HOME/casey-k/env/bin
   $HOME/casey-env/bin
   $HOME/env/bin
+  $HOME/casey-k/installs/bin
   /usr/local/{bin,sbin}
   $path
 )
