@@ -41,10 +41,9 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
-# Always execute ~/.profile if it exists
-# This should happen before we modify any path vars in .zprofile
-if [ -e "$HOME/.profile" ]; then
-    . "$HOME/.profile"
+# Run any external runcom if it exists
+if [ -e "$HOME/.zprofile.pre" ]; then
+    . "$HOME/.zprofile.pre"
 fi
 
 # Add python local path to the PATH
@@ -93,3 +92,7 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
+# Run any external runcom if it exists
+if [ -e "$HOME/.zprofile.post" ]; then
+    . "$HOME/.zprofile.post"
+fi

@@ -5,13 +5,18 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Hooks for external rc
+if [ -e "$HOME/.zshrc.pre" ]; then
+    . "$HOME/.zshrc.pre"
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# indeed-env
-if [ -e "$HOME/env/etc/indeedrc" ]; then
-    . "$HOME/env/etc/indeedrc"
+# Hooks for external rc
+if [ -e "$HOME/.zshrc.post" ]; then
+    . "$HOME/.zshrc.post"
 fi
 
