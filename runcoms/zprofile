@@ -53,8 +53,11 @@ fi
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# disable for mac since it causes laggy prompts
+if [[ "$OSTYPE" != darwin* ]]; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # Set the list of directories that Zsh searches for programs.
 path=(
