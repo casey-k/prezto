@@ -55,6 +55,7 @@ fi
 export PATH="$HOME/.pyenv/bin:$PATH"
 # disable for mac since it causes laggy prompts
 if [[ "$OSTYPE" != darwin* ]]; then
+    echo "Initiating pyenv"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
